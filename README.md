@@ -1,4 +1,4 @@
-# HCI Classwork 16 — Unity Combo System
+# HCI Classwork 16
 
 A Unity project where the player controls a cube using keyboard sequences. Each combo performs a movement and plays a different sound. The camera follows the player as they move.
 
