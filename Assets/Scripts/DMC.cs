@@ -5,6 +5,12 @@ using UnityEngine;
 public class DMC : MonoBehaviour
 {
     private Rigidbody rb;
+    
+    private AudioSource fuenteAudio;
+    public AudioClip sonidoFlipDerecha;
+    public AudioClip sonidoMegaSalto;
+    public AudioClip sonidoFlipIzquierda;
+    
     private List<string> listaInputs = new List<string>();
     
     public float tiempoMaximoCombo = 1.5f; 
@@ -18,7 +24,8 @@ public class DMC : MonoBehaviour
 
     void Start()
     {
-        rb = GetComponent<Rigidbody>();
+        rb = GetComponent<Rigidbody>(); 
+        fuenteAudio = GetComponent<AudioSource>();
     }
 
     void Update()
@@ -48,20 +55,20 @@ public class DMC : MonoBehaviour
         EvaluarCombos();
     }
 
-    void EvaluarCombos()
-    {
-        if (EsIgualA(combo_FlipDerecha))
+    void EvaluarCombos() { 
+        if (EsIgualA(combo_FlipDerecha)) 
         {
+            fuenteAudio.PlayOneShot(sonidoFlipDerecha);
             EjecutarFlipDerecha();
             listaInputs.Clear();
         }
-        else if (EsIgualA(combo_MegaSalto))
-        {
+        else if (EsIgualA(combo_MegaSalto)) {
+            fuenteAudio.PlayOneShot(sonidoMegaSalto);
             EjecutarMegaSalto();
             listaInputs.Clear();
         }
-        else if (EsIgualA(combo_FlipIzquierda))
-        {
+        else if (EsIgualA(combo_FlipIzquierda)) {
+            fuenteAudio.PlayOneShot(sonidoFlipIzquierda);
             EjecutarFlipIzquierda();
             listaInputs.Clear();
         }
