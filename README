@@ -31,7 +31,6 @@ This downloads the project into a folder named `HCI-Classwork-16`.
 5. Open the project with Unity Editor **6000.5.7f1**.
 6. Wait for Unity to import the files, download the packages, and compile the scripts.
 
-
 ## 3. Run the Project
 
 1. In the **Project** window, open the `Assets/Scenes` folder.
